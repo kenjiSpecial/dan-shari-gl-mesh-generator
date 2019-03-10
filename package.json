@@ -1,0 +1,21 @@
+{
+	"name": "dan-shari-gl-mesh-generator",
+	"version": "1.0.0",
+	"description": "generator for dan-shari-gl mesh template",
+	"main": "index.js",
+	"author": "kenji-special",
+	"license": "MIT",
+	"bin": {
+		"g-dsr": "./index.js"
+	},
+	"dependencies": {
+		"async": "^2.6.2",
+		"chalk": "^2.4.2",
+		"inquirer": "^6.2.2",
+		"yargs": "^13.2.2"
+	},
+	"devDependencies": {
+		"eslint-config-prettier": "^4.1.0",
+		"eslint-plugin-prettier": "^3.0.1"
+	}
+}
