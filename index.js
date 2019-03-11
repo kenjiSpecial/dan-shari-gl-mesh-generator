@@ -3,7 +3,9 @@
 const fs = require('fs');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
-// const async = require('async');
+
+const currentPath = process.cwd();
+console.log(currentPath);
 
 function init() {
 	console.log(`${chalk.red('WARN')}: mesh name example: tomato-sauce`);
@@ -20,7 +22,7 @@ function askQuestions() {
 	return inquirer.prompt(questions);
 }
 function createDirectory(meshName) {
-	const componentUrl = `${__dirname}/components`;
+	const componentUrl = `${currentPath}/components`;
 	const isStatus0 = fs.existsSync(componentUrl);
 
 	if (!isStatus0) {
