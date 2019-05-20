@@ -8,3 +8,5 @@
 ## Usage
 
 `g-dsr`
+
+then, answer the question, "What is the name of the mesh name?".
