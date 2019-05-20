@@ -16,13 +16,14 @@ function askQuestions() {
 		{
 			name: 'MESHNAME',
 			type: 'input',
-			message: 'What is the name of the mesh name?'
+			message: 'What is the name of the mesh name? ex)o: earth, tokyo-tower x: ice cube'
 		}
 	];
 	return inquirer.prompt(questions);
 }
+
 function createDirectory(meshName) {
-	const componentUrl = `${currentPath}/src/components`;
+	const componentUrl = `${currentPath}/src/gl/components`;
 	const isStatus0 = fs.existsSync(componentUrl);
 
 	if (!isStatus0) {
@@ -73,10 +74,10 @@ async function run() {
 	}
 
 	const fragContents = createFrag();
-    fs.writeFileSync(`${shaderDirectory}/shader.frag.glsl`, fragContents, 'utf8');
-    
-    const vertContents = createVert();
-    fs.writeFileSync(`${shaderDirectory}/shader.vert.glsl`, vertContents, 'utf8');
+	fs.writeFileSync(`${shaderDirectory}/shader.frag.glsl`, fragContents, 'utf8');
+
+	const vertContents = createVert();
+	fs.writeFileSync(`${shaderDirectory}/shader.vert.glsl`, vertContents, 'utf8');
 
 	// console.log(MESHNAME);
 	console.log(
@@ -89,16 +90,16 @@ async function run() {
 run();
 
 function createFrag() {
-    return `precision highp float;
+	return `precision highp float;
 
 varying vec3 vNormal;
 void main(){
     gl_FragColor = vec4(vNormal, 1.0);
-}`
+}`;
 }
 
 function createVert() {
-    return `precision highp float;
+	return `precision highp float;
 
 attribute vec4 position;
 attribute vec3 normal;
@@ -110,7 +111,7 @@ varying vec3 vNormal;
 void main() {
     gl_Position = uMVPMatrix * position;
     vNormal = normal;
-}`
+}`;
 }
 
 function createTs(className) {
@@ -187,5 +188,4 @@ export class ${className} {
         this.gl.drawElements(this.gl.TRIANGLES, index.cnt, this.gl.UNSIGNED_SHORT, 0);
     }
 }`;
-
 }
