@@ -4,8 +4,6 @@
 
 `npm install --global`
 
-`yarn add global`
-
 
 ## Usage
 
