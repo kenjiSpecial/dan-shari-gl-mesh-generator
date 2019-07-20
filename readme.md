@@ -1,4 +1,4 @@
-# DAN SHARI GL Mesh Generator
+# dan-shari-gl Mesh Generator
 
 ## Install
 
