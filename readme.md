@@ -2,7 +2,7 @@
 
 ## Install
 
-`npm install --global`
+`npm install --global index.js`
 
 
 ## Usage
