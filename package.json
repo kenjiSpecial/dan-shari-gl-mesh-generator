@@ -9,7 +9,7 @@
 		"g-dsr": "./index.js"
 	},
 	"dependencies": {
-		"async": "^2.6.2",
+		"async": "^3.2.2",
 		"chalk": "^2.4.2",
 		"inquirer": "^6.2.2",
 		"yargs": "^13.2.2"
